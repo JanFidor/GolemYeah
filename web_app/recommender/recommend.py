@@ -6,6 +6,7 @@ from openai.embeddings_utils import (
 from utils import create_single_embedding
 import os
 from sentence_transformers import SentenceTransformer
+from data_preprocessing_utils import clean_up_txt
 
 
 def make_recommendations(query: str, k_neighbors: int, model, embeddings_cache_path: str):
@@ -28,11 +29,13 @@ path_to_model = os.path.join(os.path.curdir, "models/herbert")
 model = SentenceTransformer(path_to_model)
 
 
-query = "Jestem uczniem, który zawsze fascynował się matematyką. Od dziecka uwielbiałem rozwiązywać zagadki matematyczne i brać udział w konkursach matematycznych. Moje pasje w tym obszarze rozwinęły się jeszcze bardziej podczas nauki w szkole średniej, gdzie uczestniczyłem w dodatkowych kursach matematyki i brałem udział w olimpiadach matematycznych. Nie jestem pewien, jakie konkretne studia chciałbym podjąć, ale jestem głęboko przekonany, że matematyka jest moją prawdziwą pasją. Interesuje mnie zarówno teoria matematyczna, jak i jej praktyczne zastosowania. Fascynuje mnie abstrakcyjność matematyki oraz jej rola w rozwiązywaniu realnych problemów. Poza matematyką, interesuję się również fizyką, informatyką i naukami przyrodniczymi. Chciałbym, żeby moje studia były wyjątkowo intelektualnie rozwijające, a jednocześnie dawały mi możliwość praktycznego zastosowania mojej wiedzy."
+matma = "Jestem uczniem, który zawsze fascynował się matematyką. Od dziecka uwielbiałem rozwiązywać zagadki matematyczne i brać udział w konkursach matematycznych. Moje pasje w tym obszarze rozwinęły się jeszcze bardziej podczas nauki w szkole średniej, gdzie uczestniczyłem w dodatkowych kursach matematyki i brałem udział w olimpiadach matematycznych. Nie jestem pewien, jakie konkretne studia chciałbym podjąć, ale jestem głęboko przekonany, że matematyka jest moją prawdziwą pasją. Interesuje mnie zarówno teoria matematyczna, jak i jej praktyczne zastosowania. Fascynuje mnie abstrakcyjność matematyki oraz jej rola w rozwiązywaniu realnych problemów. Poza matematyką, interesuję się również fizyką, informatyką i naukami przyrodniczymi. Chciałbym, żeby moje studia były wyjątkowo intelektualnie rozwijające, a jednocześnie dawały mi możliwość praktycznego zastosowania mojej wiedzy."
+jezyki = "Jednym z moich głównych zainteresowań są języki obce. Od zawsze fascynowała mnie możliwość komunikowania się z ludźmi z różnych kultur i miejsc na całym świecie. Dlatego też pochłaniam się nauką różnych języków. Aktualnie uczę się włoskiego, ale to tylko początek mojej przygody z językami. Uwielbiam odkrywać nowe słowa, gramatykę i subtelności kultury, która jest związana z każdym językiem. Moje cele to nie tylko opanowanie danego języka, ale także zgłębienie jego historii i tradycji. Poza językami obcymi, pasjonuję się także literaturą, zwłaszcza klasykami światowej literatury. Czytanie książek pozwala mi zanurzyć się w różnych epokach i światach, a jednocześnie doskonale ćwiczy umiejętność zrozumienia i interpretacji tekstu, co jest przydatne w nauce języków."
+lego = "Lubię zabawki lego i śpiewanie hip-hopu. W dzieciństwie chodziłem do grupy teatralnej."
 
-# names = make_recommendations(query, 5, model, embedding_cache_path)
-# df = pd.read_csv(os.path.join(os.path.curdir, "data", "kierunki_studiow.csv"))
-embeddings_cache = pd.read_pickle(embedding_cache_path)
-print(len(list(embeddings_cache.keys())))
 
-print(embeddings_cache.keys())
+# names = make_recommendations(clean_up_txt(matma), 5, model, embedding_cache_path)
+names = make_recommendations(clean_up_txt(jezyki), 5, model, embedding_cache_path)
+# names = make_recommendations(clean_up_txt(lego), 5, model, embedding_cache_path)
+
+print(names)
