@@ -1,5 +1,6 @@
 import pandas as pd
 import nltk
+import os
 nltk.download('punkt')
 
 
@@ -19,7 +20,7 @@ def combine_columns(row):
     syllabus = row["program_ksztalcenia"]
     exam_subjects = row["przedmioty_maturalne"]
 
-    txt = f"Nazwa kierunku: {name}. " \
+    txt = f"" \
            f"Opis kierunku: {description}." \
            f"Program kierunku obejmuje {syllabus}." \
            f" Kierunek jest przeznaczony dla: {targeted_students}. " \
@@ -38,3 +39,15 @@ def description_target_df(df):
 
     new_df['target'] = df['nazwa']
     return new_df
+
+
+def save_preprocessed_data():
+    df = pd.read_csv(data_path("kierunki_studiow.csv"))
+    preprocessed_df = description_target_df(df)
+    preprocessed_df.to_csv(data_path("kierunki_studiow_czyste.csv"))
+
+
+def data_path(filename):
+    return os.path.join(os.path.curdir, "data", filename)
+
+save_preprocessed_data()
