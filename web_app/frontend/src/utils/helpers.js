@@ -6,7 +6,7 @@ export const getAPI = (uri) => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetch(uri, {
+        fetch(`/api/${uri}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ export const getAPI = (uri) => {
     return { loading, data, error };
 }
 
-export const postAPI = (uri, type, data) => {
+export const postAPI = (uri, data, type = 'application/json') => {
     fetch(`/api/${uri}/`, {
         method: 'POST',
         headers: {
