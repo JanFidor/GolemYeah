@@ -25,6 +25,5 @@ def upload_form_data(request):
     query = request.data
     results = make_recommendations(query, 5)
     descriptions = get_major_descriptions(results)
-    content = {"majors": results,
-               "descriptions": descriptions}
+    content = [{"major": results[i], "description": descriptions[i]} for i in range(len(results))]
     return Response(content)
