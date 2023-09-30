@@ -1,5 +1,6 @@
 import {useState} from "react";
 import '../assets/styles/question-form.css'
+import { postAPI} from "../utils/helpers";
 
 const QuestionForm = () => {
     const [text, setText] = useState('');
@@ -7,7 +8,7 @@ const QuestionForm = () => {
     const handleSubmit = () => {
         let form_data = new FormData();
         form_data.append('text', text);
-        console.log('submitted');
+        postAPI('upload_form_data', {text: text});
     }
 
     return (
