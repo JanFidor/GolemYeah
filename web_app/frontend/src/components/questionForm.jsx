@@ -1,7 +1,8 @@
 import {useState} from "react";
-import { postAPI, getAPI } from "../utils/helpers";
+import '../assets/styles/question-form.css'
+import { postAPI} from "../utils/helpers";
 
-const TestForm = () => {
+const QuestionForm = () => {
     const [text, setText] = useState('');
 
     const handleSubmit = () => {
@@ -11,13 +12,13 @@ const TestForm = () => {
     }
 
     return (
-        <div className="test-form-div">
+        <div className="form-div">
             <form onSubmit={handleSubmit} className="post-form">
                 <input value={text} onChange={(e) => setText(e.target.value)} type="text" id="test-input" />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Dalej" />
             </form>
         </div>
     )
 }
 
-export default TestForm;
+export default QuestionForm;

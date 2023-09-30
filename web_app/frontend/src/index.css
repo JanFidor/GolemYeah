@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "GaretBook";
+  src: local("GaretBook"),
+  url("./assets/fonts/garet.book.otf") format("truetype");
+  font-weight: normal;
+}
