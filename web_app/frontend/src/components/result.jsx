@@ -1,7 +1,7 @@
-import { getAPI } from "../utils/helpers";
+import { useFetch } from "../utils/helpers";
 
 const Result = () => {
-    const { loading, data, error } = getAPI('/api/get_comments/' + id);
+    const { loading, data, error } = useFetch('result');
     if (loading) return <h1>Loading...</h1>;
     if (error) return <h1>{JSON.stringify(error)}</h1>;
 

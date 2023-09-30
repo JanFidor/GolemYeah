@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 
-
-export const getAPI = (uri) => {
+export const useFetch = (uri) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState();
     const [loading, setLoading] = useState(false);
