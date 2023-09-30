@@ -30,7 +30,7 @@ def combine_columns(row):
     words = [word.lower() for word in words if word.isalpha()]
     stopwords = get_stopwords()
     words = [word for word in words if not word in stopwords]
-    return words
+    return ' '.join(words)
 
 
 def description_target_df(df):
