@@ -1,7 +1,9 @@
 import pandas as pd
 import nltk
 import os
-nltk.download('punkt')
+
+if __name__ == "__main__":
+    nltk.download('punkt')
 
 
 def get_stopwords():
