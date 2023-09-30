@@ -9,7 +9,7 @@ def create_single_embedding(description: str, model):
 
 
 def get_major_descriptions(majors):
-    df = pd.read_csv(os.path.join(os.path.curdir, "data", "kierunki_studiow.csv"))
+    df = pd.read_csv(os.path.join(os.path.curdir, 'recommender', "data", "kierunki_studiow.csv"))
     result = []
     for major in majors:
         desc_list = df[df["nazwa"] == major + " "]["opis"].iloc[0].split('.')

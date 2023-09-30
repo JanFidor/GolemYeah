@@ -4,15 +4,16 @@ from openai.embeddings_utils import (
     indices_of_nearest_neighbors_from_distances,
     tsne_components_from_embeddings
 )
-from utils import create_single_embedding
+from .utils import create_single_embedding
 import os
 from sentence_transformers import SentenceTransformer
-from data_preprocessing_utils import clean_up_txt
+from .data_preprocessing_utils import clean_up_txt
 import plotly.express as px
 
 
+
 def make_recommendations(query: str, k_neighbors: int):
-    embeddings_cache_path = "embeddings_cache1.pkl"
+    embeddings_cache_path = os.path.join(os.path.curdir, 'recommender', "embeddings_cache1.pkl")
     embeddings_cache = pd.read_pickle(embeddings_cache_path)
     names = []
     embeddings = []
@@ -20,7 +21,7 @@ def make_recommendations(query: str, k_neighbors: int):
         names.append(k)
         embeddings.append(v)
 
-    path_to_model = os.path.join(os.path.curdir, "models/herbert")
+    path_to_model = os.path.join(os.path.curdir, 'recommender', "models/herbert")
     model = SentenceTransformer(path_to_model)
     tokenized_query = clean_up_txt(query)
     query_embedding = create_single_embedding(tokenized_query, model)

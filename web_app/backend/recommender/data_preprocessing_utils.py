@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
 def get_stopwords():
     stopwords = []
-    with open('data/polish_stop_words', 'r', encoding='utf8') as file:
+    with open(os.path.join(os.path.curdir, 'recommender', 'data', 'polish_stop_words'), 'r', encoding='utf8') as file:
         for line in file:
             for word in line.split():
                 stopwords.append(word)
@@ -51,4 +51,4 @@ def save_preprocessed_data():
 def data_path(filename):
     return os.path.join(os.path.curdir, "data", filename)
 
-save_preprocessed_data()
+#save_preprocessed_data()

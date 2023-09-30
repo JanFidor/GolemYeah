@@ -18,14 +18,18 @@ def index(request):
 
 @api_view(['GET'])
 def result(request):
+    # print('cokolwiek')
+    # query = request.data['text']
+    # results = make_recommendations(query, 5)
+    # descriptions = get_major_descriptions(results)
+    # #content = {results[i]: descriptions[i] for i in range(len(results))}
+    # #print(content)
+    return Response({"name": 'name'})
+
+@api_view(['POST'])
+def upload_form_data(request):
     query = request.data
     results = make_recommendations(query, 5)
     descriptions = get_major_descriptions(results)
     content = {results[i]: descriptions[i] for i in range(len(results))}
     return Response(content)
-
-@api_view(['POST'])
-def upload_form_data(request):
-    data = request.data
-    print(data)
-    return Response('Data posted')

@@ -21,7 +21,9 @@ export const useFetch = (uri) => {
     return { loading, data, error };
 }
 
-export const postAPI = (uri, data, type = 'application/json') => {
+export const usePostAPI = (uri, data, type = 'application/json') => {
+    const [results, setResults] = useState([]);
+
     fetch(`/api/${uri}/`, {
         method: 'POST',
         headers: {
@@ -29,6 +31,9 @@ export const postAPI = (uri, data, type = 'application/json') => {
         },
         body: JSON.stringify(data)
     })
+        .then(setResults)
         .then(res => res.json())
         .then(res => console.log(res));
+
+    return data;
 }
