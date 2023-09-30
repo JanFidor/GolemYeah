@@ -1,12 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import TestForm from './components/testForm';
+import WelcomeView from './components/welcomeView';
+import UniToolView from "./components/uniToolView";
+import { Route, Routes } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <TestForm />
-    </div>
+    <Routes>
+        <Route path="/" element={<WelcomeView/>}/>
+        <Route path="/uni-tool" element={<UniToolView/>}/>
+    </Routes>
   );
 }
 
