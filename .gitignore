@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+/web_app/recommender/models
 
 # C extensions
 *.so
