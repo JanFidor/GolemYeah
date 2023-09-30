@@ -16,12 +16,11 @@ def get_stopwords():
 def combine_columns(row):
     description = row["opis"]
     targeted_students = row["dla_kogo"]
+    syllabus = row["program_ksztalcenia"]
+    exam_subjects = row["przedmioty_maturalne"]
 
-    txt = f"{description} {targeted_students}."
-    return clean_up_txt(txt[:511])
+    txt = f"{description} {syllabus} {targeted_students} {exam_subjects}."
 
-
-def clean_up_txt(txt):
     words = nltk.word_tokenize(txt)
     words = [word.lower() for word in words if word.isalpha()]
     stopwords = get_stopwords()
@@ -31,15 +30,16 @@ def clean_up_txt(txt):
 
 def description_target_df(df):
     new_df = pd.DataFrame()
-    new_df['target'] = df.apply(lambda x: ' '.join(x['nazwa'].split()), axis=1)
     new_df['description'] = df.apply(combine_columns, axis=1)
+
+    new_df['target'] = df.apply(lambda x: x['nazwa'].split()[0], axis=1)
     return new_df
 
 
 def save_preprocessed_data():
     df = pd.read_csv(data_path("kierunki_studiow.csv"))
     preprocessed_df = description_target_df(df)
-    preprocessed_df.to_csv(data_path("kierunki_studiow_krotkie.csv"))
+    preprocessed_df.to_csv(data_path("kierunki_studiow_czyste.csv"))
 
 
 def data_path(filename):
