@@ -3,12 +3,13 @@ import pickle
 import os
 import torch
 from sentence_transformers import SentenceTransformer
+from tqdm import tqdm
 
 
 def embedding_from_strings(dataframe, model, embedding_cache, embeddings_cache_path) -> list:
-    for i in range(len(dataframe)):
+    for i in tqdm(range(len(dataframe))):
         row = dataframe.iloc[i]
-        name, desc = row[0], row[1]
+        name, desc = row[2], row[1]
         if name not in embedding_cache.keys():
             embedding = model.encode(desc)
             embedding_cache[name] = torch.tensor(embedding)
@@ -16,7 +17,7 @@ def embedding_from_strings(dataframe, model, embedding_cache, embeddings_cache_p
         pickle.dump(embedding_cache, embeddings_cache_file)
 
 
-df = pd.read_csv(os.path.join(os.path.curdir, "data", "kierunki_studiow.csv"))
+df = pd.read_csv(os.path.join(os.path.curdir, "data", "kierunki_studiow_czyste.csv"))
 
 embeddings_cache_path = "embeddings_cache1.pkl"
 
