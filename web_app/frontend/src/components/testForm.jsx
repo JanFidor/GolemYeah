@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { postAPI, getAPI } from "../utils/helpers";
 
 const TestForm = () => {
     const [text, setText] = useState('');
@@ -6,7 +7,7 @@ const TestForm = () => {
     const handleSubmit = () => {
         let form_data = new FormData();
         form_data.append('text', text);
-        console.log('submitted');
+        postAPI('upload_form_data', {text: text});
     }
 
     return (
