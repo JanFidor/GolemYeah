@@ -32,7 +32,7 @@ def description_target_df(df):
     new_df = pd.DataFrame()
     new_df['description'] = df.apply(combine_columns, axis=1)
 
-    new_df['target'] = df['nazwa']
+    new_df['target'] = df.apply(lambda x: x['nazwa'].split()[0], axis=1)
     return new_df
 
 
