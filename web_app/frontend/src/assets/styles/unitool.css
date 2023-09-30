@@ -1,8 +1,48 @@
 .question {
     color: #27005D;
-    font-size: 80px;
+    font-size: 30px;
     font-family: "GaretBook";
-    padding-top: 10vh;
     text-align: left;
+    display: grid;
+}
+
+.question-title{
+    color: #27005D;
+    font-size: 40px;
+    font-family: "GaretBook";
     padding-left: 10%;
+}
+
+.questions-container {
+    width: 80%;
+    margin: auto;
+}
+
+.form-container{
+    padding-left: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+textarea {
+    width: 60%;
+    height: 100px;
+    resize: none;
+    font-size: 15px;
+    color: #27005D;
+    font-family: "GaretBook";
+    margin-top: 20px;
+}
+
+button {
+    background-color: #9400FF;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-left: 10%;
 }
