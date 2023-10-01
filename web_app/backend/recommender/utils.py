@@ -20,6 +20,17 @@ def get_major_descriptions(majors):
         result.append(desc)
     return result
 
+def get_majors_universities(majors):
+    return {
+        major: get_major_universities(major) for major in majors
+    }
+
+def get_major_universities(major):
+    df = pd.read_csv(os.path.join(os.path.curdir, "data", "kierunki_studiow.csv"))
+    uni_big_string = df[df["nazwa"] == major + " "]["uczelnie"].to_list()[0]
+    uni_list = [uni.strip() for uni in uni_big_string.split(",")]
+    return ', '.join([uni for uni in uni_list if uni != "Prezentacja"])
+
 
 def get_major_categories(majors: list):
     df = pd.read_csv(os.path.join(os.path.curdir, 'recommender', "data", "kierunki_studiow.csv"))
