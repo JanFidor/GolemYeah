@@ -1,6 +1,7 @@
 import '../assets/styles/unitool.css';
 import Footer from "./footer";
 import {useState} from "react";
+import { useLocation } from 'react-router-dom';
 
 const ResultTable = () => {
 
@@ -12,8 +13,10 @@ const ResultTable = () => {
     const [btnClass3, setBtnClass3] = useState("button-tb");
     const[btnClass4, setBtnClass4] = useState("button-tb");
 
+    const location = useLocation();
 
-    const changeDesc = (index) => { // tutaj dodatkowo powinien sie zmieniac opis po klinieciu
+
+    const changeDesc = (index) => {
         setBtnClass0("button-tb");
         setBtnClass1("button-tb");
         setBtnClass2("button-tb");
@@ -21,40 +24,64 @@ const ResultTable = () => {
         setBtnClass4("button-tb");
         switch(index) {
             case 0:
-                setBtnClass0("button-tb-on")
+                setBtnClass0("button-tb-on");
+                setBtnClass1("button-tb");
+                setBtnClass2("button-tb");
+                setBtnClass3("button-tb");
+                setBtnClass4("button-tb");
+                setDesc(location.state[0].description);
                 break;
             case 1:
-                setBtnClass1("button-tb-on")
+                setBtnClass0("button-tb");
+                setBtnClass1("button-tb-on");
+                setBtnClass2("button-tb");
+                setBtnClass3("button-tb");
+                setBtnClass4("button-tb");
+                setDesc(location.state[1].description);
                 break;
             case 2:
-                setBtnClass2("button-tb-on")
+                setBtnClass0("button-tb");
+                setBtnClass1("button-tb");
+                setBtnClass2("button-tb-on");
+                setBtnClass3("button-tb");
+                setBtnClass4("button-tb");
+                setDesc(location.state[2].description);
                 break;
             case 3:
-                setBtnClass3("button-tb-on")
+                setBtnClass0("button-tb");
+                setBtnClass1("button-tb");
+                setBtnClass2("button-tb");
+                setBtnClass3("button-tb-on");
+                setBtnClass4("button-tb");
+                setDesc(location.state[3].description);
                 break;
             case 4:
-                setBtnClass4("button-tb-on")
+                setBtnClass0("button-tb");
+                setBtnClass1("button-tb");
+                setBtnClass2("button-tb");
+                setBtnClass3("button-tb");
+                setBtnClass4("button-tb-on");
+                setDesc(location.state[4].description);
                 break;
         }
-        setDesc("Inny opis opis opis");
     }
 
     return (
         <div className={"result-div"}>
             <ul>
-                <li><button onClick={() => changeDesc(0)} className={btnClass0}>Inżynieria materiałowa</button></li>
-                <li><button onClick={() => changeDesc(1)} className={btnClass1}>Kulturoznawstwo</button></li>
-                <li><button onClick={() => changeDesc(2)} className={btnClass2}>Język niemiecki i komunikacja w biznesie</button></li>
-                <li><button onClick={() => changeDesc(3)} className={btnClass3}>Czwarta odp</button></li>
-                <li><button onClick={() => changeDesc(4)} className={btnClass4}>Piąta odp</button></li>
+                <li><button onClick={() => changeDesc(0)} className={btnClass0}>{location.state[0].major}</button></li>
+                <li><button onClick={() => changeDesc(1)} className={btnClass1}>{location.state[1].major}</button></li>
+                <li><button onClick={() => changeDesc(2)} className={btnClass2}>{location.state[2].major}</button></li>
+                <li><button onClick={() => changeDesc(3)} className={btnClass3}>{location.state[3].major}</button></li>
+                <li><button onClick={() => changeDesc(4)} className={btnClass4}>{location.state[4].major}</button></li>
             </ul>
             <div className={"desc-div"}>
-            <ul>
-                <li className={"desc-title"}>Opis kierunku</li>
-                <li>
-                    <div className={"result-desc"}>{desc}</div>
-                </li>
-            </ul>
+                <ul>
+                    <li className={"desc-title"}>Opis kierunku</li>
+                    <li>
+                        <div className={"result-desc"}>{desc}</div>
+                    </li>
+                </ul>
             </div>
         </div>
     )
