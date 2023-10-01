@@ -9,6 +9,7 @@ Potrzebne oprogramowanie:
 - Python (https://www.python.org/downloads/)
 - PyTorch (https://pytorch.org/get-started/locally/)
 - NLTK (https://www.nltk.org/install.html)
+- Model językowy Hubert (https://huggingface.co/docs/transformers/model_doc/hubert)
 
 Uruchamianie projektu:
 - w folderze GolemYeah należy wykonać komendę `pip install -r requirements.txt`
