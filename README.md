@@ -8,7 +8,7 @@ Potrzebne oprogramowanie:
 - React.js `npm install create-react-app`
 - Python (https://www.python.org/downloads/)
 - PyTorch (https://pytorch.org/get-started/locally/)
-- NLTK https://www.nltk.org/install.html
+- NLTK (https://www.nltk.org/install.html)
 
 Uruchamianie projektu:
 - w folderze GolemYeah należy wykonać komendę `pip install -r requirements.txt`
