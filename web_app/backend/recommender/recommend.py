@@ -4,12 +4,11 @@ from openai.embeddings_utils import (
     indices_of_nearest_neighbors_from_distances,
     tsne_components_from_embeddings
 )
-from .utils import create_single_embedding
+from .utils import create_single_embedding, get_major_categories, get_all_majors
 import os
 from sentence_transformers import SentenceTransformer
 from .data_preprocessing_utils import clean_up_txt
 import plotly.express as px
-
 
 
 def make_recommendations(query: str, k_neighbors: int):
@@ -33,21 +32,27 @@ def make_recommendations(query: str, k_neighbors: int):
 
 
 def create_visualization(top_neighbors: list):
-    embeddings_cache = pd.read_pickle("embeddings_cache1.pkl")
-    embeddings = [list(embeddings_cache[name]) for name in top_neighbors]
+    embeddings_cache_path = os.path.join(os.path.curdir, 'recommender', "embeddings_cache1.pkl")
+    embeddings_cache = pd.read_pickle(embeddings_cache_path)
+    categories = get_major_categories(top_neighbors)
+    neighbors = []
+    final_categories = []
+    for i, name in enumerate(top_neighbors):
+        if name[:-1] in embeddings_cache.keys():
+            neighbors.append(name[:-1])
+            final_categories.append(categories[i])
+
+    embeddings = [list(embeddings_cache[name]) for name in neighbors]
+
     tsne_components = tsne_components_from_embeddings(embeddings, n_components=2)
-    # fig = px.scatter_3d(
-    #     x=tsne_components[:, 0],
-    #     y=tsne_components[:, 1],
-    #     z=tsne_components[:, 2],
-    #     text=top_neighbors,
-    #     title="Nearest neighbors"
-    # )
+    colors = px.colors.qualitative.Set1[:len(final_categories)]
+
     fig = px.scatter(
         x=tsne_components[:, 0],
         y=tsne_components[:, 1],
-        text=top_neighbors,
-        title="Nearest neighbors"
+        color=final_categories,
+        color_discrete_sequence=colors,
+        title="Przestrzeń embeddingów"
     )
     fig.show()
 
@@ -68,5 +73,3 @@ def create_visualization(top_neighbors: list):
 # names = make_recommendations(clean_up_txt(lego), 5, model, embedding_cache_path)
 
 # print(names)
-
-# create_visualization(names)
