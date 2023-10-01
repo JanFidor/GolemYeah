@@ -8,11 +8,12 @@
 }
 
 .question {
-    color: #453490;
+    color: #334993;
     font-size: 30px;
     font-family: "GaretBook";
     text-align: left;
     display: grid;
+    width: 75%;
 }
 
 .question-title{
@@ -26,6 +27,7 @@
 .questions-container {
     width: 80%;
     margin: auto;
+    padding-left: 10%;
 }
 
 .form-container{
@@ -35,7 +37,7 @@
 }
 
 textarea {
-    width: 60%;
+    width: 80%;
     height: 100px;
     resize: none;
     font-size: 15px;
