@@ -121,17 +121,19 @@ const UniToolView = ({setter}) => {
         <>
             <div className="questions-container">
                 <h1 className={"question-title"}>Powiedz nam coś o sobie</h1>
+                <h2 className={"question-subtitle"}>1. Pytania otwarte</h2>
                 <form className="post-form">
-                    <TextInput question={'Opisz swoje hobby i zainteresowania, które chcesz rozwijać podczas studiów?'}
+                    <TextInput question={'Opisz swoje hobby i zainteresowania, które chcesz rozwijać podczas studiów:'}
                                state={text1} setState={setText1} />
-                    <TextInput question={'Co chciałbyś robić po studiach? Możesz opisać swój wymarzony zawód?'}
+                    <TextInput question={'Co chciał_byś robić po studiach? Możesz opisać swój wymarzony zawód'}
                                state={text2} setState={setText2} />
-                    <TextInput question={'Jaki przedmiot/temat w szkole lubiłeś? Opisz.'}
+                    <TextInput question={'Jaki przedmiot/temat w szkole lubił_ś? Opisz.'}
                                state={text3} setState={setText3} />
-                    <TextInput question={'Czy brałeś udział w wolontariacie/kole zainteresowań, które lubiłeś? Jeśli tak, opisz.'}
+                    <TextInput question={'Czy brał_ś udział w wolontariacie/kole zainteresowań? Czy któreś lubił_ś? Jeśli tak, opisz je.'}
                                state={text4} setState={setText4} />
-                    <SingleChoiceInput question={'Jestem...'}
-                                       choices={['kreatywny', 'duszą artystyczną', 'przedsiębiorczy', 'logiczny', 'komunikatywny']} state={option1} setState={setOption1} />
+                    <h2 className={"question-subtitle"}>2. Pytania jednokrotnego wyboru</h2>
+                    <SingleChoiceInput question={'Jestem osobą'}
+                                       choices={['kreatywną', 'artystyczną', 'przedsiębiorczą', 'myślącą logicznie', 'komunikatywną']} state={option1} setState={setOption1} />
                     <SingleChoiceInput question={'Interesują mnie...'}
                                        choices={['ludzie i ich motywacje', 'biznes', 'media', 'nowinki technologiczne', 'design', 'muzyka', 'sport', 'taniec', 'literatura']} state={option2} setState={setOption2} />
                     <MultiChoiceInput
@@ -147,9 +149,9 @@ const UniToolView = ({setter}) => {
                         setSelectedOptions={setSelectedOptions2}
                     />
                 </form>
-                <button className={"button-tool"} onClick={handleClick}>Wyślij</button>
+                <button className={"button-tool button-bottom"} onClick={handleClick}>Wyślij</button>
             </div>
-            {/* <Footer/> */}
+             <Footer/>
         </>
     )
 }
