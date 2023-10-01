@@ -45,7 +45,7 @@ textarea {
 }
 
 button {
-    background-color: #453490;
+    background-color: #334993;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -55,7 +55,7 @@ button {
     display: inline-block;
     font-size: 14px;
     border-radius: 25px;
-    margin-left: 10%;
+    margin-left: 11%;
 }
 
 ul {
@@ -116,4 +116,18 @@ table {
 .desc-div{
     width: 100%;
     padding-left: 10%;
+}
+
+select {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid;
+    border-radius: 0.25em;
+    padding-top: 1em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    margin-top: 10px;
 }
