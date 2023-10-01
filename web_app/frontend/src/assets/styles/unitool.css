@@ -9,7 +9,7 @@
 
 .question {
     color: #334993;
-    font-size: 30px;
+    font-size: 25px;
     font-family: "GaretBook";
     text-align: left;
     display: grid;
@@ -19,6 +19,14 @@
 .question-title{
     color: #453490;
     font-size: 50px;
+    font-family: "GaretBook";
+    padding-left: 10%;
+    margin-bottom: 10px;
+}
+
+.question-subtitle{
+    color: #683181;
+    font-size: 30px;
     font-family: "GaretBook";
     padding-left: 10%;
     margin-bottom: 10px;
@@ -77,6 +85,11 @@ li {
     height: 60px;
     width: 100%;
     margin-left: 0;
+}
+
+.button-bottom {
+    margin-bottom: 8%;
+    margin-top: 2%;
 }
 
 .button-tb:hover{
