@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_protect
 
 from recommender.recommend import make_recommendations
 from recommender.utils import get_major_descriptions
@@ -24,9 +25,13 @@ def result(request):
 
 
 @api_view(['POST'])
+@csrf_protect
 def upload_form_data(request):
-    query = request.data
-    results = make_recommendations(query, 5)
-    descriptions = get_major_descriptions(results)
-    content = [{"major": results[i], "description": descriptions[i]} for i in range(len(results))]
+#     print(request)
+    query = request.data["text1"]
+    print("xd")
+#     results = make_recommendations(query, 5)
+#     descriptions = get_major_descriptions(results)
+#     content = [{"major": results[i], "description": descriptions[i]} for i in range(len(results))]
+    content = {"test": 'text'}
     return Response(content)
