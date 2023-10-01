@@ -25,8 +25,8 @@ def result(request):
 
 @api_view(['POST'])
 def upload_form_data(request):
-    query = request.data
-    results = make_recommendations(query, 5)
-    descriptions = get_major_descriptions(results)
-    content = [{"major": results[i], "description": descriptions[i]} for i in range(len(results))]
-    return Response(content)
+    query = request.data['text1']
+    # results = make_recommendations(query, 5)
+    # descriptions = get_major_descriptions(results)
+    # content = [{"major": results[i], "description": descriptions[i]} for i in range(len(results))]
+    return Response({"odpowiedz": query})
