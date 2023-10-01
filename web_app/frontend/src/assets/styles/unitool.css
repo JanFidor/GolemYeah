@@ -1,5 +1,5 @@
 .result-title {
-    color: #27005D;
+    color: #453490;
     font-size: 60px;
     font-family: "GaretBook";
     padding-top: 10vh;
@@ -8,7 +8,7 @@
 }
 
 .question {
-    color: #27005D;
+    color: #453490;
     font-size: 30px;
     font-family: "GaretBook";
     text-align: left;
@@ -16,7 +16,7 @@
 }
 
 .question-title{
-    color: #27005D;
+    color: #453490;
     font-size: 40px;
     font-family: "GaretBook";
     padding-left: 10%;
@@ -38,7 +38,7 @@ textarea {
     height: 100px;
     resize: none;
     font-size: 15px;
-    color: #27005D;
+    color: #453490;
     font-family: "GaretBook";
     margin-top: 20px;
 }
@@ -76,12 +76,12 @@ li {
 }
 
 .button-tb:hover{
-    background-color: #9400FF;
+    background-color: #0f6768;
     color: white;
 }
 
 .button-tb-on{
-    background-color: #9400FF;
+    background-color: #0f6768;
     color: white;
     border-radius: 0;
     height: 60px;
@@ -104,7 +104,7 @@ table {
 }
 
 .desc-title{
-    color: #27005D;
+    color: #453490;
     font-size: 20px;
     font-weight: bold;
     font-family: "GaretBook";
