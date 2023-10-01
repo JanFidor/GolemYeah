@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 
 const ResultTable = () => {
 
-    const [desc, setDesc] = useState('Opis opis opis');
     const [course, setCourse] = useState('Nazwa kierunku');
     const[btnClass0, setBtnClass0] = useState("button-tb-on");
     const [btnClass1, setBtnClass1] = useState("button-tb");
@@ -14,6 +13,10 @@ const ResultTable = () => {
     const[btnClass4, setBtnClass4] = useState("button-tb");
 
     const location = useLocation();
+
+    const [desc, setDesc] = useState(location.state[0].description);
+    const [univ, setUniv] = useState(location.state[0].universities);
+
 
 
     const changeDesc = (index) => {
@@ -77,10 +80,15 @@ const ResultTable = () => {
             </ul>
             <div className={"desc-div"}>
                 <ul>
-                    <li className={"desc-title"}>Opis kierunku</li>
+                    <li className={"desc-title"}>Opis kierunku:</li>
                     <li>
                         <div className={"result-desc"}>{desc}</div>
                     </li>
+                    <li className={"desc-title"}>Uczelnie oferujące ten kierunek:</li>
+                    <li>
+                        <div className='result-desc'>
+                            {univ}
+                        </div></li>
                 </ul>
             </div>
         </div>

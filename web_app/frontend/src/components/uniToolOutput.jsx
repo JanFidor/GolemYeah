@@ -13,14 +13,14 @@ const UniToolOutput = () => {
 
     return (
         <>
-        <div className={"questions-container"}>
-        <div className="result-title">
-            Rekomendowane kierunki
-        </div>
-        <ResultTable/>
-        </div>
-            <button className={"button"} onClick={handleBack}>Powrót do strony głównej</button>
-    <Footer/>
+            <div className={"questions-container"}>
+                <div className="result-title">
+                    Rekomendowane kierunki
+                </div>
+                <ResultTable/>
+            </div>
+            <button className={"button button-back"} onClick={handleBack}>Powrót do strony głównej</button>
+            <Footer/>
         </>
     )
 }

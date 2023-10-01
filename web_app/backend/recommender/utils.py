@@ -26,7 +26,7 @@ def get_majors_universities(majors):
     }
 
 def get_major_universities(major):
-    df = pd.read_csv(os.path.join(os.path.curdir, "data", "kierunki_studiow.csv"))
+    df = pd.read_csv(os.path.join(os.path.curdir, "recommender", "data", "kierunki_studiow.csv"))
     uni_big_string = df[df["nazwa"] == major + " "]["uczelnie"].to_list()[0]
     uni_list = [uni.strip() for uni in uni_big_string.split(",")]
     return ', '.join([uni for uni in uni_list if uni != "Prezentacja"])

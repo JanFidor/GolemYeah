@@ -6,7 +6,7 @@ import SingleChoiceInput from "./singleChoiceInput";
 import TextInput from "./textInput";
 import {useNavigate} from "react-router-dom";
 // import QuestionForm from './questionForm';
-import MultiChoiceInput from "./MultiChoiceInput";
+import MultiChoiceInput from "./multiChoiceInput";
 
 
 const UniToolView = ({setter}) => {

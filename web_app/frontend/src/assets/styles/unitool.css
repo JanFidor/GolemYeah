@@ -112,7 +112,8 @@ table {
 
 .result-desc{
     height: 100%;
-    width: 100%;
+    width: 40vw;
+    padding-bottom: 10px;
 
 }
 
@@ -131,6 +132,7 @@ table {
 .desc-div{
     width: 100%;
     padding-left: 10%;
+    padding-bottom: 3vh;
 }
 
 select {
@@ -145,4 +147,8 @@ select {
     line-height: 1.1;
     background-color: #fff;
     margin-top: 10px;
+}
+
+.button-back {
+    margin-left: 15%;
 }
