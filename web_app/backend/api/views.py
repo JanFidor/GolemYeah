@@ -12,13 +12,16 @@ API_DESCRIPTION = {
     'result': 'return the response to the user'
 }
 
+
 @api_view(['GET'])
 def index(request):
     return Response(API_DESCRIPTION)
 
+
 @api_view(['GET'])
 def result(request):
     return Response({"name": 'name'})
+
 
 @api_view(['POST'])
 def upload_form_data(request):
