@@ -19,3 +19,17 @@ def get_major_descriptions(majors):
             desc = ".".join(desc_list) + '.'
         result.append(desc)
     return result
+
+
+def get_major_categories(majors: list):
+    df = pd.read_csv(os.path.join(os.path.curdir, 'recommender', "data", "kierunki_studiow.csv"))
+    categories = []
+    for major in majors:
+        categories.append(df[df["nazwa"] == major]["kategoria"].iloc[0])
+    return categories
+
+
+def get_all_majors():
+    df = pd.read_csv(os.path.join(os.path.curdir, 'recommender', "data", "kierunki_studiow.csv"))
+    results = df["nazwa"].to_list()
+    return results
