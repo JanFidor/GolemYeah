@@ -2,9 +2,9 @@
     color: #334993;
     font-size: 120px;
     font-family: "GaretBook";
-    padding-top: 10vh;
+    padding-top: 6vh;
     text-align: left;
-    padding-left: 10%;
+    padding-left: 8%;
 }
 
 .button-div {
@@ -14,12 +14,31 @@
 
 .button-tool {
     background-color: #0f6768;
-    border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border-radius: 25px;
+    margin-top: 3%;
+    border: 2px solid white;
+}
+
+.button-tool:hover {
+    background-color: white;
+    border: 2px solid #0f6768;
+    color: #0f6768;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-top: 3%;
+}
+
+.app-descr {
+    font-family: "GaretBook";
+    padding-left: 8%;
+    width: 80%;
+    padding-top: 0;
 }

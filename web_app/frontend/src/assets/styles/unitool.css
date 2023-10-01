@@ -56,7 +56,6 @@ textarea {
 
 button {
     background-color: #334993;
-    border: none;
     color: white;
     padding: 15px 32px;
     margin-top: 0;
@@ -66,6 +65,21 @@ button {
     font-size: 14px;
     border-radius: 25px;
     margin-left: 11%;
+    border: 2px solid white;
+}
+
+button:hover {
+    background-color: white;
+    color: #334993;
+    padding: 15px 32px;
+    margin-top: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 25px;
+    margin-left: 11%;
+    border: 2px solid #334993;
 }
 
 ul {
@@ -90,6 +104,15 @@ li {
 .button-bottom {
     margin-bottom: 8%;
     margin-top: 2%;
+    border: 2px solid white;
+}
+
+.button-bottom:hover {
+    margin-bottom: 8%;
+    margin-top: 2%;
+    border: 2px solid #0f6768;
+    background-color: white;
+    color:  #0f6768
 }
 
 .button-tb:hover{
@@ -114,7 +137,6 @@ table {
     height: 100%;
     width: 40vw;
     padding-bottom: 10px;
-
 }
 
 .result-div{
@@ -151,4 +173,10 @@ select {
 
 .button-back {
     margin-left: 15%;
+    border: 2px solid white;
+}
+
+.button-back:hover {
+    margin-left: 15%;
+    border: 2px solid #334993;
 }
