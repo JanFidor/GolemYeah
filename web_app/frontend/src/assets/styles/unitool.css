@@ -1,8 +1,133 @@
-.question {
-    color: #27005D;
-    font-size: 80px;
+.result-title {
+    color: #453490;
+    font-size: 60px;
     font-family: "GaretBook";
     padding-top: 10vh;
     text-align: left;
+    padding-bottom: 20px;
+}
+
+.question {
+    color: #453490;
+    font-size: 30px;
+    font-family: "GaretBook";
+    text-align: left;
+    display: grid;
+}
+
+.question-title{
+    color: #453490;
+    font-size: 50px;
+    font-family: "GaretBook";
     padding-left: 10%;
+    margin-bottom: 10px;
+}
+
+.questions-container {
+    width: 80%;
+    margin: auto;
+}
+
+.form-container{
+    padding-left: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+textarea {
+    width: 60%;
+    height: 100px;
+    resize: none;
+    font-size: 15px;
+    color: #453490;
+    font-family: "GaretBook";
+    margin-top: 20px;
+}
+
+button {
+    background-color: #334993;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-top: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 25px;
+    margin-left: 11%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 30%;
+}
+
+li {
+    padding-bottom: 10px;
+}
+
+.button-tb {
+    background-color: #E4f1FF;
+    color: black;
+    border-radius: 0;
+    height: 60px;
+    width: 100%;
+    margin-left: 0;
+}
+
+.button-tb:hover{
+    background-color: #0f6768;
+    color: white;
+}
+
+.button-tb-on{
+    background-color: #0f6768;
+    color: white;
+    border-radius: 0;
+    height: 60px;
+    width: 100%;
+    margin-left: 0;
+}
+
+table {
+    padding-top: 15px;
+}
+
+.result-desc{
+    height: 100%;
+    width: 100%;
+
+}
+
+.result-div{
+    display: flex;
+}
+
+.desc-title{
+    color: #453490;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "GaretBook";
+    text-align: left;
+}
+
+.desc-div{
+    width: 100%;
+    padding-left: 10%;
+}
+
+select {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid;
+    border-radius: 0.25em;
+    padding-top: 1em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    margin-top: 10px;
 }
