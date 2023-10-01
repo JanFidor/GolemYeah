@@ -31,7 +31,6 @@ def get_major_universities(major):
     uni_list = [uni.strip() for uni in uni_big_string.split(",")]
     return ', '.join([uni for uni in uni_list if uni != "Prezentacja"])
 
-print(get_majors_universities(["administracja"]))
 
 def get_major_categories(majors: list):
     df = pd.read_csv(os.path.join(os.path.curdir, 'recommender', "data", "kierunki_studiow.csv"))
