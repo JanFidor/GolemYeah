@@ -6,6 +6,7 @@ import SingleChoiceInput from "./singleChoiceInput";
 import TextInput from "./textInput";
 import {useNavigate} from "react-router-dom";
 // import QuestionForm from './questionForm';
+import MultiChoiceInput from "./MultiChoiceInput";
 
 
 const UniToolView = ({setter}) => {
@@ -16,6 +17,8 @@ const UniToolView = ({setter}) => {
     const [text4, setText4] = useState('');
     const [option1, setOption1] = useState('');
     const [option2, setOption2] = useState('');
+    const [selectedOptions1, setSelectedOptions1] = useState([]);
+    const [selectedOptions2, setSelectedOptions2] = useState([]);
     // const [option5, setOption5] = useState('');
     // const [option6, setOption6] = useState('');
     // const [option7, setOption7] = useState('');
@@ -37,6 +40,8 @@ const UniToolView = ({setter}) => {
                 'text4': text4,
                 'text5': option1,
                 'text6': option2,
+                'text7': selectedOptions1,
+                'text8': selectedOptions2,
             }),
         };
 
@@ -129,28 +134,18 @@ const UniToolView = ({setter}) => {
                                        choices={['kreatywny', 'duszą artystyczną', 'przedsiębiorczy', 'logiczny', 'komunikatywny']} state={option1} setState={setOption1} />
                     <SingleChoiceInput question={'Interesują mnie...'}
                                        choices={['ludzie i ich motywacje', 'biznes', 'media', 'nowinki technologiczne', 'design', 'muzyka', 'sport', 'taniec', 'literatura']} state={option2} setState={setOption2} />
-                    {/*                   state={option2} setState={setOption2} />*/}
-                    {/*<SingleChoiceInput question={'Czy lubisz brać udział w licznych warsztatach i projektach?'}*/}
-                    {/*                   choices={['Tak', 'Nie', 'Nie wiem']}*/}
-                    {/*                   state={option3} setState={setOption3} />*/}
-                    {/*<SingleChoiceInput question={'Czy ważne jest dla ciebie znalezienie pracy w trakcie studiów albo bezpośrednio po ich ukończeniu?'}*/}
-                    {/*                   choices={['Tak', 'Nie', 'Nie wiem']}*/}
-                    {/*                   state={option4} setState={setOption4} />*/}
-                    {/*<SingleChoiceInput question={'Czy wśród natury czujesz się w swoim żywiole?'}*/}
-                    {/*                   choices={['Tak', 'Nie', 'Nie wiem']}*/}
-                    {/*                   state={option5} setState={setOption5} />*/}
-                    {/*<SingleChoiceInput question={'Czy wśród natury czujesz się w swoim żywiole?'}*/}
-                    {/*                   choices={['Tak', 'Nie', 'Nie wiem']}*/}
-                    {/*                   state={option6} setState={setOption6} />*/}
-                    {/*<SingleChoiceInput question={'Czy wśród natury czujesz się w swoim żywiole?'}*/}
-                    {/*                   choices={['Tak', 'Nie', 'Nie wiem']}*/}
-                    {/*                   state={option7} setState={setOption7} />*/}
-                    {/*<SingleChoiceInput question={'Czy wśród natury czujesz się w swoim żywiole?'}*/}
-                    {/*                   choices={['Tak', 'Nie', 'Nie wiem']}*/}
-                    {/*                   state={option8} setState={setOption8} />*/}
-                    {/*<SingleChoiceInput question={'Czy wśród natury czujesz się w swoim żywiole?'}*/}
-                    {/*                   choices={['Tak', 'Nie', 'Nie wiem']}*/}
-                    {/*                   state={option9} setState={setOption9} />*/}
+                    <MultiChoiceInput
+                        question={'Zaznacz, które dziedziny Cię interesują:'}
+                        choices={['przyroda', 'literatura', 'nauki medyczne', 'nauki ścisłe', 'nauki społeczne', 'technika', 'religia']}
+                        selectedOptions={selectedOptions1}
+                        setSelectedOptions={setSelectedOptions1}
+                    />
+                    <MultiChoiceInput
+                        question={'Osoba z którą najbardziej się identyfikuję to:'}
+                        choices={['Steve Jobs', 'Elon Musk', 'Sherlock Holmes', 'Quentin Tarantino', 'Frida Kahlo', 'Robb Stark', 'Geralt z Rivii', 'Barack Obama', 'Albert Einstein']}
+                        selectedOptions={selectedOptions2}
+                        setSelectedOptions={setSelectedOptions2}
+                    />
                 </form>
                 <button className={"button-tool"} onClick={handleClick}>Wyślij</button>
             </div>
