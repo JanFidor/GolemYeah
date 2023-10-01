@@ -26,6 +26,10 @@ const UniToolView = ({setter}) => {
     // const [option9, setOption9] = useState('');
     const navigate = useNavigate();
 
+    function handleNav() {
+        navigate("/");
+    }
+
     const handleClick = async (e) => {
         e.preventDefault();
         const requestOptions = {
@@ -121,6 +125,7 @@ const UniToolView = ({setter}) => {
         <>
             <div className="questions-container">
                 <h1 className={"question-title"}>Powiedz nam coś o sobie</h1>
+                <button onClick={handleNav}>Wróć do Strony głównej</button>
                 <h2 className={"question-subtitle"}>1. Pytania otwarte</h2>
                 <form className="post-form">
                     <TextInput question={'Opisz swoje hobby i zainteresowania, które chcesz rozwijać podczas studiów:'}
