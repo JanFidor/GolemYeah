@@ -2,8 +2,10 @@ import '../assets/styles/unitool.css'
 import Footer from "./footer";
 import {useState} from "react";
 import {postAPI} from "../utils/helpers";
+import { useNavigate } from "react-router-dom";
 
 const UniToolView = () => {
+    const navigate = useNavigate();
 
     const [text1, setText1] = useState('');
     const [text2, setText2] = useState('');
@@ -16,10 +18,15 @@ const UniToolView = () => {
         postAPI('upload_form_data', {form_data});
     }
 
+    const handleBack = () => {
+        navigate("/");
+    }
+
     return (
         <>
         <div className="questions-container">
             <h1 className={"question-title"}>Ankieta</h1>
+            <button className={"button"} onClick={handleBack}>Cofnij do strony głównej</button>
 
             <form className={"form-container"} onChange={setText1}>
                 <label className={"question"}>

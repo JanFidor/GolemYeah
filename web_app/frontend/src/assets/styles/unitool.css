@@ -17,9 +17,10 @@
 
 .question-title{
     color: #453490;
-    font-size: 40px;
+    font-size: 50px;
     font-family: "GaretBook";
     padding-left: 10%;
+    margin-bottom: 10px;
 }
 
 .questions-container {
@@ -44,14 +45,15 @@ textarea {
 }
 
 button {
-    background-color: #9400FF;
+    background-color: #453490;
     border: none;
     color: white;
     padding: 15px 32px;
+    margin-top: 0;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 25px;
     margin-left: 10%;
 }
