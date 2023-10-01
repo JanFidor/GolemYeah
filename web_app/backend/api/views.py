@@ -25,8 +25,12 @@ def result(request):
 
 @api_view(['POST'])
 def upload_form_data(request):
-    query = request.data['text1']
-    # results = make_recommendations(query, 5)
-    # descriptions = get_major_descriptions(results)
-    # content = [{"major": results[i], "description": descriptions[i]} for i in range(len(results))]
-    return Response({"odpowiedz": query})
+    openQ = ['text1', 'text2', 'text3', 'text4']
+    query = " ".join(request.data[part] for part in openQ)
+    query += f"Jestem {request.data['option1']}. "
+    query += f"Interesuje mnie {request.data['option2']}. "
+
+    results = make_recommendations(query, 5)
+    descriptions = get_major_descriptions(results)
+    content = [{"major": results[i], "description": descriptions[i]} for i in range(len(results))]
+    return Response(content)
