@@ -29,6 +29,10 @@ def upload_form_data(request):
     query = " ".join(request.data[part] for part in openQ)
     query += f"Jestem {request.data['option1']}. "
     query += f"Interesuje mnie {request.data['option2']}. "
+    query += "Dziedziny, które mnie interesują to " + " ".join(request.data['selectedOptions1']) + ". "
+    query += "Osoba z którą najbardziej się identyfikuję to: " + " ".join(request.data['selectedOptions2']) + ". "
+
+    print(query)
 
     results = make_recommendations(query, 5)
     descriptions = get_major_descriptions(results)
