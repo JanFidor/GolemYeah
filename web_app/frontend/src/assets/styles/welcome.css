@@ -1,5 +1,5 @@
 .welcome-title {
-    color: #27005D;
+    color: #334993;
     font-size: 120px;
     font-family: "GaretBook";
     padding-top: 10vh;
@@ -13,7 +13,7 @@
 }
 
 .button-tool {
-    background-color: #9400FF;
+    background-color: #0f6768;
     border: none;
     color: white;
     padding: 15px 32px;
