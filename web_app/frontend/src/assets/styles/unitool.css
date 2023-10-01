@@ -1,3 +1,12 @@
+.result-title {
+    color: #27005D;
+    font-size: 60px;
+    font-family: "GaretBook";
+    padding-top: 10vh;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
 .question {
     color: #27005D;
     font-size: 30px;
@@ -45,4 +54,64 @@ button {
     font-size: 16px;
     border-radius: 25px;
     margin-left: 10%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 30%;
+}
+
+li {
+    padding-bottom: 10px;
+}
+
+.button-tb {
+    background-color: #E4f1FF;
+    color: black;
+    border-radius: 0;
+    height: 60px;
+    width: 100%;
+    margin-left: 0;
+}
+
+.button-tb:hover{
+    background-color: #9400FF;
+    color: white;
+}
+
+.button-tb-on{
+    background-color: #9400FF;
+    color: white;
+    border-radius: 0;
+    height: 60px;
+    width: 100%;
+    margin-left: 0;
+}
+
+table {
+    padding-top: 15px;
+}
+
+.result-desc{
+    height: 100%;
+    width: 100%;
+
+}
+
+.result-div{
+    display: flex;
+}
+
+.desc-title{
+    color: #27005D;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "GaretBook";
+    text-align: left;
+}
+
+.desc-div{
+    width: 100%;
+    padding-left: 10%;
 }
